@@ -7,7 +7,7 @@
           <h3>Library Books List </h3>
           <!-- FIXED ADD BUTTON BELOW -->
           <% if (userRole === 'admin') { %>
-          <a href="/books/details" class="btn btn-primary"><i class="fa fa-plus"></i> Add a book</a>
+            <a href="/books/details" class="btn btn-primary"><i class="fa fa-plus"></i> Add a book</a>
           <% } %>
           <br>
           <div class="table-responsive">
@@ -22,9 +22,10 @@
                   <th class="text-center">Overdue Fees</th>
                   <th class="text-center">Currently With</th>
                   <% if (userRole === 'admin') { %>
-                  <th class="text-center"></th>
-                  <th class="text-center"></th>
+                    <th class="text-center"></th>
+                    <th class="text-center"></th>
                   <% } %>
+                  
                 </tr>
                 </thead>
                 <tbody>
@@ -40,19 +41,20 @@
                   <td class="text-center"><%= books[count].Currently_with %></td>
 
                   <% if (userRole === 'admin') { %>
-                  <td class="text-center">
-                    <!-- EDIT BUTTON -->
-                    <a href="/books/details/<%= books[count]._id %>" class="btn btn-primary btn-sm">
-                      <i class="fas fa-pencil-alt"></i>Edit</a>
-                  </td>
-
-                  <td class="text-center">
-                    <!-- DELETE BUTTON -->
-                    <a href="/books/delete/<%= books[count]._id %>" class="btn btn-danger btn-sm">
-                      <i class="fa fa-times" aria-hidden="true"></i></a>
-                      </a>
-                  </td>
+                       <td class="text-center">
+                        <!-- EDIT BUTTON -->
+                          <a href="/books/details/<%= books[count]._id %>" class="btn btn-primary btn-sm">
+                          <i class="fas fa-pencil-alt"></i>Edit</a>
+                        </td>
+  
+                        <td class="text-center">
+                          <!-- DELETE BUTTON -->
+                           <a href="/books/delete/<%= books[count]._id %>" class="btn btn-danger btn-sm">
+                           <i class="fa fa-times" aria-hidden="true"></i></a>
+                          </a>
+                        </td>
                   <% } %>
+                  
                 </tr>
                 <% } %>
               </tbody>
